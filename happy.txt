@@ -1,4 +1,40 @@
-public boolean isHappy (int number) {
-	//TODO: 
-	return true;
-}
+	public boolean isHappy(int number) {
+		List<Integer> lTotalSquare = new ArrayList<Integer>();
+
+		int count = 0;
+		while (number != 1) {
+			int result = 0;
+
+			Stack<Integer> elementOfNumber = elementOfNumber(number);
+			while (!elementOfNumber.isEmpty()) {
+				result += Math.pow(elementOfNumber.pop(), 2);
+			}
+
+			lTotalSquare.add(result);
+			for (Integer totalSquare : lTotalSquare) {
+				if (result == totalSquare && lTotalSquare.size() > 1) {
+					return false;
+				}
+			}
+			number = result;
+
+			count++;
+
+			if (count == 100) {
+				return false;
+			}
+
+		}
+		return true;
+	}
+
+	public Stack<Integer> elementOfNumber(int number) {
+		Stack<Integer> stack = new Stack<Integer>();
+
+		while (number > 0) {
+			stack.push(number % 10);
+			number = number / 10;
+		}
+		return stack;
+	}
+
