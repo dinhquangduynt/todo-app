@@ -1,3 +1,3 @@
 todo-app
 
-VERSION: 3.0
+VERSION: 4.0-SNAPSHOT
