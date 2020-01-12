@@ -1,0 +1,4 @@
+public boolean isStrong (int number) {
+   //TO-DO: Strong
+   return true;
+}
